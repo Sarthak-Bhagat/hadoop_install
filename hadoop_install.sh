@@ -1,6 +1,6 @@
 read -n 1 -s -r -p "Press any key to download hadoop"
 wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
-sudo apt-get install ssh pdsh hadoop openjdk-8-jdk 
+sudo apt-get install ssh pdsh openjdk-8-jdk 
 echo "export PDSH_RCMD_TYPE=ssh" >> .bashrc
 ssh-keygen -t rsa -P ""
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
