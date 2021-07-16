@@ -23,7 +23,7 @@ echo "<configuration>
 
         <name>hadoop.tmp.dir</name>
 
-        <value>/$USER/hdata</value>
+        <value>/home/$USER/hdata</value>
 
     </property>
 
