@@ -1,6 +1,6 @@
 read -n 1 -s -r -p "Press any key to download hadoop"
 wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
-sudo apt-get install ssh, pdsh, hadoop, openjdk-8-jdk
+sudo apt-get install ssh pdsh hadoop openjdk-8-jdk 
 echo "export PDSH_RCMD_TYPE=ssh" >> .bashrc
 ssh-keygen -t rsa -P ""
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -75,11 +75,11 @@ export HADOOP_COMMON_HOME=${HADOOP_HOME}
 export HADOOP_HDFS_HOME=${HADOOP_HOME}
 export YARN_HOME=${HADOOP_HOME}' >> .bashrc
 
-echo 'alias hdfs="$HADOOP_HOME/bin/hdfs"' >> .bashrc
-echo 'alias yarn_start="$HADOOP_HOME/sbin/start-yarn.sh"' >> .bashrc
+# echo 'alias hdfs="$HADOOP_HOME/bin/hdfs"' >> .bashrc
+# echo 'alias yarn_start="$HADOOP_HOME/sbin/start-yarn.sh"' >> .bashrc
 # echo 'alias hdfs_start=""$HADOOP_HOME/sbin/start-yarn.sh; $HADOOP_HOME/sbin/start-hfs.sh"' >> .bashrc
 
 
-source ~/.bashrc
+# source ~/.bashrc
 
-hdfs namenode -format
+# hdfs namenode -format
