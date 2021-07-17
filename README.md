@@ -6,7 +6,7 @@ Download the script and execute it in your terminal.
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install git
 
-cd Downloads [Optional]
+cd Downloads
 
 git clone https://github.com/Sarthak-Bhagat/hadoop_install.git
 cd hadoop_install
