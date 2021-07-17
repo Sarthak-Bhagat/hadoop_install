@@ -1,16 +1,20 @@
 read -n 1 -s -r -p "Press any key to download hadoop"
 cd ~
 wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
+read -n 1 -s -r -p "INSTALLING DEPENDANCIES"
 sudo apt-get install pdsh
 sudo apt-get install openjdk-8-jdk 
 sudo apt-get install openssh-server
 echo "export PDSH_RCMD_TYPE=ssh" >> .bashrc
 ssh-keygen -t rsa -P ""
+echo "ADDING SSH KEY"
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # ssh localhost
 # java -version
+echo "EXTRACTING HADOOP"
 tar xzf hadoop-3.3.1.tar.gz
 mv hadoop-3.3.1 hadoop
+echo "CREATING HADOOP FILES"
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/" >> ~/hadoop/etc/hadoop/hadoop-env.sh
 
 echo "<?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?>
@@ -131,6 +135,7 @@ echo "<?xml version=\"1.0\"?>
 </configuration>
 " > ~/hadoop/etc/hadoop/yarn-site.xml
 
+echo "ADDING HADOOP TO PATH"
 echo 'export HADOOP_HOME="/home/$USER/hadoop"
 export PATH=$PATH:$HADOOP_HOME/bin
 export PATH=$PATH:$HADOOP_HOME/sbin 
@@ -141,10 +146,9 @@ export YARN_HOME=${HADOOP_HOME}' >> .bashrc
 
 . ~/.bashrc
 
-echo "RESTART THE TERNINAL AND RUN THESE COMMANDS:
-hdfs
 start-yarn.sh
 start-dfs.sh
-hdfs namenode -format"
+hdfs namenode -format
 
+echo "INSTALLATION COMPLETE"
 
