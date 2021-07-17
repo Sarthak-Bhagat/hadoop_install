@@ -1,4 +1,5 @@
 read -n 1 -s -r -p "Press any key to download hadoop"
+cd ~
 wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
 sudo apt-get install pdsh
 sudo apt-get install openjdk-8-jdk 
