@@ -1,5 +1,5 @@
 read -n 1 -s -r -p "Press any key to download hadoop"
-# wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
+wget https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
 sudo apt-get install pdsh
 sudo apt-get install openjdk-8-jdk 
 sudo apt-get install openssh-server
@@ -138,7 +138,12 @@ export HADOOP_COMMON_HOME=${HADOOP_HOME}
 export HADOOP_HDFS_HOME=${HADOOP_HOME}
 export YARN_HOME=${HADOOP_HOME}' >> .bashrc
 
-# echo 'alias hdfs="$HADOOP_HOME/bin/hdfs"' >> .bashrc
-# echo 'alias yarn_start="$HADOOP_HOME/sbin/start-yarn.sh"' >> .bashrc
-# echo 'alias hdfs_start=""$HADOOP_HOME/sbin/start-yarn.sh; $HADOOP_HOME/sbin/start-hfs.sh"' >> .bashrc
+. ~/.bashrc
+
+echo "RESTART THE TERNINAL AND RUN THESE COMMANDS:
+hdfs
+start-yarn.sh
+start-dfs.sh
+hdfs namenode -format"
+
 
