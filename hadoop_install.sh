@@ -13,6 +13,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 # java -version
 echo "EXTRACTING HADOOP"
 tar xzf hadoop-3.3.1.tar.gz
+rm -rf hadoop-3.3.1.tar.gz
 mv hadoop-3.3.1 hadoop
 echo "CREATING HADOOP FILES"
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/" >> ~/hadoop/etc/hadoop/hadoop-env.sh
