@@ -1,5 +1,3 @@
-Download the script and execute it in your terminal.
-
 # STEPS FOR INSTALLIGN ON A FRESH UBUNTU VM
 
 ```
