@@ -13,4 +13,4 @@ cd hadoop_install
 . hadoop_install.sh
 ```
 
-Press enter whenever prompteed.
+Press enter whenever prompted.
